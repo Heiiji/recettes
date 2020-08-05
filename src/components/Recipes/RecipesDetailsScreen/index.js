@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export default RecipesDetailsScreen = ({}) => {
+const RecipesDetailsScreen = ({}) => {
     return <View>
         <Text>RecipesDetailsScreen</Text>
     </View>
 }
+export default RecipesDetailsScreen;

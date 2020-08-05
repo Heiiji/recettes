@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export default RecipesListScreen = ({}) => {
+const RecipesListScreen = ({}) => {
     return <View>
         <Text>RecipesListScreen</Text>
     </View>
 }
+
+export default RecipesListScreen;
