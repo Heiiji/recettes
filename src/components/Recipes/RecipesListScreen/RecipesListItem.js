@@ -3,8 +3,12 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 
 const URL_IMAGE = "https://spoonacular.com/recipeImages/";
 
-const RecipesListItem = ({item}) => {
-    return <TouchableOpacity onPress={() => {}}>
+const RecipesListItem = ({item, navigation}) => {
+    return <TouchableOpacity onPress={() => {
+        navigation.navigate('RecipesDetails', {
+            id: item.id
+        });
+    }}>
         <View style={styles.container}>
             <Image source={{uri: URL_IMAGE + item.image}} style={styles.image} />
             <Text style={styles.title}>{item.title}</Text>

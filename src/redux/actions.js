@@ -1,4 +1,4 @@
-import { ADD_RECIPES } from "./actionTypes";
+import {ADD_RECIPES, SELECTED_RECIPE} from "./actionTypes";
 
 export const fetchRecipesAction = (data) => {
     return {
@@ -8,3 +8,10 @@ export const fetchRecipesAction = (data) => {
         }
     };
 }
+
+export const fetchSelectedRecipeAction = data => ({
+    type: SELECTED_RECIPE,
+    payload: {
+        data
+    }
+})
