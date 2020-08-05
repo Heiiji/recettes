@@ -13,7 +13,10 @@ export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Stack.Navigator><Stack.Screen name="RecipesList" component={RecipesListScreen}/><Stack.Screen name="RecipesDetails" component={RecipesDetailsScreen}/></Stack.Navigator>
+        <Stack.Navigator>
+          <Stack.Screen name="RecipesList" component={RecipesListScreen}/>
+          <Stack.Screen name="RecipesDetails" component={RecipesDetailsScreen}/>
+        </Stack.Navigator>
       </NavigationContainer>
     </Provider>
   );
