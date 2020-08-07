@@ -19,7 +19,8 @@ const RecipesListItem = ({item, navigation}) => {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        flex: 1
     },
     image: {
         width: 100,
@@ -29,7 +30,8 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         marginLeft: 25,
-        marginTop: 10
+        marginTop: 10,
+        width: "70%"
     }
 })
 

@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     separator: {
-        height: 3,
+        height: 2,
+        marginVertical: 2,
         backgroundColor: 'lightgrey'
     }
 });
