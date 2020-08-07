@@ -11,7 +11,9 @@ const RecipesListItem = ({item, navigation}) => {
     }}>
         <View style={styles.container}>
             <Image source={{uri: URL_IMAGE + item.image}} style={styles.image} />
-            <Text style={styles.title}>{item.title}</Text>
+            <View style={styles.containerRight}>
+                <Text style={styles.title}>{item.title}</Text>
+            </View>
         </View>
     </TouchableOpacity>
 }
@@ -20,18 +22,21 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         backgroundColor: 'white',
-        flex: 1
+        flex: 1,
+        maxWidth: "100%"
     },
     image: {
-        width: 100,
+        width: "30%",
         height: 100
     },
     title: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginLeft: 25,
-        marginTop: 10,
-        width: "70%"
+        fontSize: 16,
+        fontWeight: 'bold'
+    },
+    containerRight: {
+        width: "70%",
+        paddingLeft: 10,
+        paddingTop: 10
     }
 })
 

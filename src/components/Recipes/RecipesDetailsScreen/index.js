@@ -13,8 +13,6 @@ const RecipesDetailsScreen = ({navigation, route}) => {
         fetchSelectedRecipe(dispatch, id);
     }, []);
 
-    console.log(recipe)
-
     return <ScrollView>
         <View style={styles.containerImage}>
             <Image source={{ uri: recipe.image }} resizeMode={"cover"} style={styles.image} />

@@ -1,2 +1,6 @@
 export const ADD_RECIPES = "ADD_RECIPES";
 export const SELECTED_RECIPE = "SELECTED_RECIPE";
+
+export const ADD_TASK = "ADD_TASK";
+export const DELETE_TASK = "DELETE_TASK";
+export const CHANGE_TASK_STATUS = "CHANGE_TASK_STATUS";
