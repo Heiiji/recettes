@@ -13,6 +13,8 @@ const RecipesDetailsScreen = ({navigation, route}) => {
         fetchSelectedRecipe(dispatch, id);
     }, []);
 
+    console.log(recipe)
+
     return <ScrollView>
         <View style={styles.containerImage}>
             <Image source={{ uri: recipe.image }} resizeMode={"cover"} style={styles.image} />
@@ -21,8 +23,9 @@ const RecipesDetailsScreen = ({navigation, route}) => {
             {recipe.title}
         </Text>
         <View style={styles.containerIngredients}>
+
             {
-                recipe.extendedIngredients.map(ing => {
+                recipe.extendedIngredients?.map(ing => {
                     return <Text key={ing.name} style={styles.ing} >{ing.name}</Text>
                 })
             }
