@@ -1,30 +1,32 @@
 import React from 'react';
-import { View } from "react-native";
-import RecipesListScreen from "../components/Recipes/RecipesListScreen";
-import RecipesDetailsScreen from "../components/Recipes/RecipesDetailsScreen";
 import TasksContainer from "../components/TasksEpic/TasksContainer";
 import {NavigationContainer} from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import RecipesNavigator from "./RecipiesNavigator";
+import { Ionicons } from "@expo/vector-icons";
 
-const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
-
-function RecipesNavigator() {
-    return(
-        <Stack.Navigator>
-            <Stack.Screen name="RecipesList" component={RecipesListScreen}/>
-            <Stack.Screen name="RecipesDetails" component={RecipesDetailsScreen}/>
-        </Stack.Navigator>
-    );
-}
 
 const AppNavigation = () => {
     return (
         <NavigationContainer>
-            <Tabs.Navigator>
-                <Tabs.Screen name="recipesList" component={RecipesNavigator}/>
-                <Tabs.Screen name="taskContainer" component={TasksContainer}/>
+            <Tabs.Navigator screenOptions={
+                ({route}) => ({
+                    tabBarIcon: ({focused, color, size}) => {
+                        let icon
+
+                        if (route.name === "Recettes") {
+                            icon = "ios-list";
+                        } else {
+                            icon = "ios-cart";
+                        }
+
+                        return <Ionicons name={icon} size={32} color={color} />;
+                    }
+                })
+            } >
+                <Tabs.Screen name="Recettes" component={RecipesNavigator}/>
+                <Tabs.Screen name="Listes" component={TasksContainer}/>
             </Tabs.Navigator>
         </NavigationContainer>
     );
