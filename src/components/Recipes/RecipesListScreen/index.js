@@ -19,12 +19,18 @@ const RecipesListScreen = ({ navigation }) => {
         return <RecipesListItem navigation={navigation} item={item} />
     }
 
+    const _onRefresh = () => {
+        fetchRecipes(dispatch, search);
+    }
+
     return <View style={styles.container}>
         <Search/>
         <FlatList
             data={recipes}
             renderItem={_renderItem}
             ItemSeparatorComponent={() => <View style={styles.separator} />}
+            refreshing={false}
+            onRefresh={_onRefresh}
         />
     </View>
 }
