@@ -1,4 +1,4 @@
-import {ADD_RECIPES, SELECTED_RECIPE, ADD_TASK, DELETE_TASK, CHANGE_TASK_STATUS} from "./actionTypes";
+import {ADD_RECIPES, SELECTED_RECIPE, ADD_TASK, DELETE_TASK, CHANGE_TASK_STATUS, SET_SEARCH_TEXT} from "./actionTypes";
 
 export const fetchRecipesAction = (data) => {
     return {
@@ -34,3 +34,8 @@ export const changeTaskStatus = id => ({
     type: CHANGE_TASK_STATUS,
     payload: id
 })
+
+export const setSearchText = text => ({
+    type: SET_SEARCH_TEXT,
+    payload: text
+});
